@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -20,13 +18,16 @@
 					</div>
 
 					<nav>
-
+						<!--Navigation Links -->
 						<ul>
 							<li><h3>Home</h3></li>
 							<li><h3>Registered Gyms</h3></li>
 							<li><h3>Registered Athletes</h3></li>
 							<li><h3>National Champions</h3></li>
 							<li><h3>Officals</h3></li>
+							<li><h3>Upcoming Events</h3></li>
+							<li><h3>Event Results</h3></li>
+
 						</ul>
 
 					</nav>
