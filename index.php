@@ -1,8 +1,11 @@
-<?php
 
-<DOCTYPE!>
+
+<!DOCTYPE html>
 	<html>
 		<head>
+			<meta charset="UTF-8">
+			<link rel="stylesheet" type="text/css" href="css/main.css">
+			<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		</head>
 		<body>
 
@@ -13,21 +16,24 @@
 				<header>
 
 					<div id="logo">
+						<h1>Kentucky Local Boxing Committee</h1>
 					</div>
 
 					<nav>
 
 						<ul>
-							<li>Home</li>
-							<li>Registered Gyms</li>
-							<li>Registered Athletes</li>
-							<li>National Champions</li>
-							<li>Officals</li>
+							<li><h3>Home</h3></li>
+							<li><h3>Registered Gyms</h3></li>
+							<li><h3>Registered Athletes</h3></li>
+							<li><h3>National Champions</h3></li>
+							<li><h3>Officals</h3></li>
 						</ul>
 
 					</nav>
 
 				</header>
+
+				<!-- Big Picture -->
 
 				<div class="">
 				</div>
@@ -46,6 +52,3 @@
 			</div>
 		</body>
 	</html>
-
-
-?>
