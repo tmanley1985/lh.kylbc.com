@@ -14,26 +14,23 @@
 			<div id="wrapper">
 
 				<header>
-
-					<div id="logo">
-						<h1>Kentucky Local Boxing Committee</h1>
+					<div class="grid-container">
+						<div class="grid-2" id="logo">
+							<h1>Kentucky Local Boxing Committee</h1>
+						</div>
+						<nav class="grid-8">
+							<!--Navigation Links -->
+							<ul>
+								<li><h3>Home</h3></li>
+								<li><h3>Registered Gyms</h3></li>
+								<li><h3>Registered Athletes</h3></li>
+								<li><h3>National Champions</h3></li>
+								<li><h3>Officals</h3></li>
+								<li><h3>Upcoming Events</h3></li>
+								<li><h3>Event Results</h3></li>
+							</ul>
+						</nav>
 					</div>
-
-					<nav>
-						<!--Navigation Links -->
-						<ul>
-							<li><h3>Home</h3></li>
-							<li><h3>Registered Gyms</h3></li>
-							<li><h3>Registered Athletes</h3></li>
-							<li><h3>National Champions</h3></li>
-							<li><h3>Officals</h3></li>
-							<li><h3>Upcoming Events</h3></li>
-							<li><h3>Event Results</h3></li>
-
-						</ul>
-
-					</nav>
-
 				</header>
 
 				<!-- Big Picture -->
