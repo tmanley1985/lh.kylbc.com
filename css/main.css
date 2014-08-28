@@ -1,14 +1,22 @@
 /********
-LOGO and NAV
+HEADER, LOGO and NAV
 ********/
-
+header{
+	width:90%;
+	padding:2%;
+}
+nav li{
+	display:inline;
+	margin: 0 0 5px 0;
+	background-color:rgb(0,10,0);
+	width:20px;
+	border: 1 px solid black;
+}
 
 /********
 BODY, WRAPPER
 ********/
 body{
-	width:100%;
-	background-color:red;
 }
 #wrapper {
 	width:90%;
