@@ -2,11 +2,12 @@
 	<html>
 		<head>
 			<meta charset="UTF-8">
-			<link rel="stylesheet" type="text/css" href="css/main.css">
 			<link rel="stylesheet" type="text/css" href="css/normalize.css">
 			<link rel="stylesheet" type="text/css" href="css/grid.css">
+			<link rel="stylesheet" type="text/css" href="css/main.css">
 			<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		</head>
+		</head>			
+
 		<body>
 
 			<!-- The Wrapper Div will center the page-->
