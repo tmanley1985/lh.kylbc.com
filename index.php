@@ -1,24 +1,25 @@
 <?php
 	require('inc/header.php');
-	require('inc/footer.php')
 ?>
 			
+	
+		<div class="grid-container">
+			<!-- Rotating pictures-->
+			<!--Call Jquery function here-->
+			<section class="grid-6 main">
+				<img src="graphics/bigpicture.jpg" alt="National champs">
+			</section>
 
-				<div class= "carousel">
-					<!-- Rotating pictures-->
-					<!--Call Jquery function here-->
-					<img src="graphics/bigpicture.jpg" alt="National champs">
-				</div>
+			<section class="grid-4 sidebar">
+			</section>
+		</div>
+	
+<?php 
+	require('inc/footer.php');
+?>
 
-				<!-- Holds the rotating media boxes-->
 
-				<div class="social_media">
-					<ul>
-						<li></li>
-						<li></li>
-						<li></li>
-					</ul>
 
-				</div>
+				
 
 		
