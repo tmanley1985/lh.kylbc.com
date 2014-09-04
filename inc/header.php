@@ -9,6 +9,7 @@
 			<link rel="stylesheet" type="text/css" href="css/normalize.css">
 			<link rel="stylesheet" type="text/css" href="css/grid.css">
 			<link rel="stylesheet" type="text/css" href="css/main.css">
+			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 			<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		</head>			
 
@@ -26,13 +27,24 @@
 						<nav class="grid-8">
 							<!--Navigation Links -->
 							<ul>
-								<li><h3>Home</h3></li>
-								<li><h3>Registered Gyms</h3></li>
-								<li><h3>Registered Athletes</h3></li>
-								<li><h3>National Champions</h3></li>
-								<li><h3>Officals</h3></li>
-								<li><h3>Upcoming Events</h3></li>
-								<li><h3>Event Results</h3></li>
+								<li><a href="index.php">Home</a></li>
+								<li><a href="pages/gyms.php">Gyms</a></li>
+								<li>Athletes</li>
+									<ul>
+										<li><a href="pages/national_champions.php">National Champions</a></li>
+									</ul>
+								<li>Officals</li>
+									<ul>
+										<li><a href="pages/officers.php">Officers</a></li>
+										<li><a href="pages/coaches.php">Coaches</a></li>
+										<li><a href="pages/officials.php">Officials</a></li>
+									</ul>
+								<li>Events</li>
+									<ul>
+										<li><a href="pages/upcoming.php">Upcoming</a></li>
+										<li><a href="pages/results.php">Results</a></li>
+									</ul>
+							
 							</ul>
 						</nav>
 					</div>
