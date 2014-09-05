@@ -11,6 +11,7 @@
 			</section>
 
 			<section class="grid-4 sidebar">
+				<h2>News</h2>
 			</section>
 		</div>
 	
