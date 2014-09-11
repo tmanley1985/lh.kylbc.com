@@ -1,6 +1,7 @@
 <?php 
 	include 'inc/config.php';
 	include 'inc/db.php';
+	include 'php_functions.php';
 ?>
 <!DOCTYPE html>
 	<html>
@@ -31,10 +32,11 @@
 			
 							<ul>
 								<li><a href="index.php">Home</a></li>
-								<li><a href="pages/gyms.php">Gyms</a></li>
-								<li><a href="pages/athletes.php">Athletes</a></li>
-								<li><a href="pages/officials.php">Officals</a></li>
-								<li><a href="pages/events.php">Events</a></li>
+								<li><a href="gyms.php">Gyms</a></li>
+								<li><a href="athletes.php">Athletes</a></li>
+								<li><a href="officials.php">Officals</a></li>
+								<li><a href="
+									events.php">Events</a></li>
 							</ul>
 						</nav>
 					</div>
