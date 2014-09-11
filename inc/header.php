@@ -1,7 +1,7 @@
 <?php 
-	include 'inc/config.php';
-	include 'inc/db.php';
-	include 'php_functions.php';
+	require 'inc/config.php';
+	require 'inc/db.php';
+	require 'php_functions.php';
 ?>
 <!DOCTYPE html>
 	<html>
