@@ -7,6 +7,12 @@ header{
 	background-color: #475E5E;
 	font-family: 'Oswald', sans-serif;
 	color:white;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 header h1{
 	font-size: 1.5em;
@@ -16,14 +22,13 @@ header a{
 	font-family: 'Oswald', sans-serif;
 	font-size: 1.25em;
 }
-nav ul li{
-	
+header a:hover{
+	font-family: 'Shadows Into Light', cursive;
 }
 nav li{
 	display:inline;
 	margin-right:2%;
-	margin-top: auto;
-	margin-bottom: auto;
+
 }
 
 /********
@@ -33,6 +38,7 @@ body{
 }
 #wrapper {
 	width:90%;
+	height:100%;
 	margin-left:auto;
 	margin-right:auto;
 	
@@ -44,10 +50,15 @@ section{
 .sidebar > h2{
 	width:90%;
 	height:10%;
-	background-color:#A3AEAE;
+	background-color:#336699;
 	padding: 2%;
+	font-size:1.5em;
 	font-family: 'Oswald', sans-serif;
 	text-align:center;
+	color:white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
 }
 footer{
 	width:100%;
@@ -57,7 +68,22 @@ footer{
 	margin-bottom:2%;
 	background-color: #475E5E;
 	overflow:auto;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color:white;
+	font-family: 'Shadows Into Light', cursive;
 
+}
+footer li{
+	font-size:1.5em;
+}
+footer p{
+	color:white;
+	font-size:1.5em;
+	font-family: 'Shadows Into Light', cursive;
+	float:right;
+	margin-left:2%;
 }
 footer img{
 	float:left;
@@ -74,6 +100,40 @@ footer img:hover{
 	width:7%;
 	height:7%;
 }
+
+/********
+Responsive Slider
+********/
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  }
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  }
+  .rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+  }
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+  }
 /********
 Global
 ********/
