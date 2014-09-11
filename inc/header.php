@@ -1,6 +1,6 @@
 <?php 
 	include 'inc/config.php';
-	include 'inc/db.php'
+	include 'inc/db.php';
 ?>
 <!DOCTYPE html>
 	<html>
@@ -10,7 +10,9 @@
 			<link rel="stylesheet" type="text/css" href="css/grid.css">
 			<link rel="stylesheet" type="text/css" href="css/main.css">
 			<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-			<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+			<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
+			<script src="js/responsiveslides/responsiveslides.min.js"></script>
 		</head>			
 
 		<body>
@@ -21,11 +23,12 @@
 
 				<header>
 					<div class="grid-container">
-						<div class="grid-2" id="logo">
+						<div class="grid-4" id="logo">
 							<h1>Kentucky Local Boxing Committee</h1>
 						</div>
-						<nav class="grid-8">
+						<nav class="grid-6">
 							<!--Navigation Links -->
+			
 							<ul>
 								<li><a href="index.php">Home</a></li>
 								<li><a href="pages/gyms.php">Gyms</a></li>
