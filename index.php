@@ -7,7 +7,10 @@
 			<!-- Rotating pictures-->
 			<!--Call Jquery function here-->
 			<section class="grid-6 main">
-				<img src="graphics/bigpicture.jpg" alt="National champs">
+				<ul class="rslides">
+				  <li><img src="graphics/lexpal.jpg" alt=""></li>
+				  <li><img src="graphics/mali.jpg" alt=""></li>
+				</ul>
 			</section>
 
 			<section class="grid-4 sidebar">
@@ -15,6 +18,7 @@
 			</section>
 		</div>
 	
+
 <?php 
 	require('inc/footer.php');
 ?>
