@@ -15,6 +15,12 @@
 
 			<section class="grid-4 sidebar">
 				<h2>News</h2>
+				<h3>Title</h3>
+				<article>
+						
+
+
+				</article>
 			</section>
 		</div>
 	
