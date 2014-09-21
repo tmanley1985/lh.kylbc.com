@@ -11,8 +11,8 @@
 			<th>Website</th>
 		</tr>
 			<?php
-				if ($db) {
-					$gyms = get_gyms();
+					$gym = new Model($db);
+					$gyms = $gym->get_tbl_data('gyms');
 
 					foreach($gyms as $gym){
 						echo '<tr>';
@@ -24,8 +24,6 @@
 						echo '</tr>';
 					}
 
-					/*echo '<pre>'; echo var_dump($gyms); exit();*/
-				}
 			?>
 	</table>
 </div>
