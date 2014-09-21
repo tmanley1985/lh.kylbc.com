@@ -1,7 +1,7 @@
 <?php 
 	require 'inc/config.php';
 	require 'inc/db.php';
-	require 'php_functions.php';
+	require 'Model.php';
 ?>
 <!DOCTYPE html>
 	<html>
