@@ -27,6 +27,24 @@
 			?>
 	</table>
 </div>
+<?php 
+	//Calls a php function to dynamically create the form
+?>
+<form method="post">
+
+	Gym:     <input type="text" id="gym"     name="gym"><br>
+	Coach:   <input type="text" id="coach"   name="coach"><br>
+	Address: <input type="text" id="address" name="address"><br>
+	Number:  <input type="text" id="number"  name="number"><br>
+	Website: <input type="text" id="website" name="website"><br>
+	<input type="submit" value="Submit">
+
+</form>
+<?php 
+	$new_model = new Model($db);
+	$sql = $new_model->insert_new_rec($_POST);
+	echo $sql;
+?>
 <?php
 	require('inc/footer.php');
 ?>
