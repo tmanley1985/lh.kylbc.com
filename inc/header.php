@@ -2,6 +2,7 @@
 	require 'inc/config.php';
 	require 'inc/db.php';
 	require 'Model.php';
+	require 'Admin.php';
 ?>
 <!DOCTYPE html>
 	<html>
@@ -39,5 +40,13 @@
 									events.php">Events</a></li>
 							</ul>
 						</nav>
+						<div class="admin-login">
+							<?php if(){
+								echo '<p>Sign Out</p>';
+							}else{
+								echo '<p>Sign In</p>';
+							}
+							?>
+						</div>
 					</div>
 				</header>
