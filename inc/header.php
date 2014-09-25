@@ -1,4 +1,6 @@
 <?php 
+	session_start();
+
 	require 'inc/config.php';
 	require 'inc/db.php';
 	require 'Model.php';
@@ -41,12 +43,7 @@
 							</ul>
 						</nav>
 						<div class="admin-login">
-							<?php if(){
-								echo '<p>Sign Out</p>';
-							}else{
-								echo '<p>Sign In</p>';
-							}
-							?>
+							<p>Sign In</p>
 						</div>
 					</div>
 				</header>
