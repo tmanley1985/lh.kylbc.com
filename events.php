@@ -17,12 +17,14 @@
 
 			
 					foreach($events as $event){
+						echo '<tr>';
 						echo '<td>' . $event['event'] . '</td>';
 						echo '<td>' . $event['promoter'] . '</td>';
 						echo '<td>' . $event['date'] . '</td>';
 						echo '<td>' . $event['time'] . '</td>';
 						echo '<td>' . $event['description'] . '</td>';
 						echo '<td>' . $event['address'] . '</td>';
+						echo '</tr>';
 					}
 
 			?>
