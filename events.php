@@ -8,6 +8,7 @@
 			<th>Date</th>
 			<th>Time</th>
 			<th>Description</th>
+			<th>Address</th>
 		</tr>
 		<tr>
 			<?php
