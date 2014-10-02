@@ -21,6 +21,7 @@
 						echo '<td>' . $event['date'] . '</td>';
 						echo '<td>' . $event['time'] . '</td>';
 						echo '<td>' . $event['description'] . '</td>';
+						echo '<td>' . $event['address'] . '</td>';
 					}
 
 			?>
@@ -33,6 +34,8 @@
 	Date: <input type="text" id="date" name="date"><br>
 	Time:  <input type="text" id="time"  name="time"><br>
 	Description: <input type="text" id="description" name="description"><br>
+	Address: <input type="text" id="address" name="address"><br>
+
 	<input type="submit" value="Submit">
 
 </form>
