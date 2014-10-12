@@ -13,7 +13,10 @@
 
 			}
 			if($user == $db_admin_data['user'] && $pass == $db_admin_data['pass']){
-				echo "Logged In as Admin";
+				$_SESSION['authorized'] = true;
+				session_regenerate_id();
+				header('Location: index.php');
+				exit();
 			}elseif ($user != $db_admin_data['user']) {
 				echo "Incorrect Username";
 			}elseif($pass != $db_admin_data['pass']){
