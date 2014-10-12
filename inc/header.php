@@ -1,6 +1,9 @@
 <?php 
 	session_start();
-
+	//Check to see if the session is set and if so sets the admin session to true
+	if(isset($_SESSION['authorized'])){
+		$_SESSION['admin'] = true;
+	}
 	require 'inc/config.php';
 	require 'inc/db.php';
 	require 'Model.php';
@@ -42,8 +45,21 @@
 									events.php">Events</a></li>
 							</ul>
 						</nav>
-						<div class="admin-login">
-							<p>Sign In</p>
-						</div>
+						<?php
+						//Checks to see if admin session is set and if so lets the admin know 
+						//that they are logged in, gives a logout link to destroy the session
+						if(isset($_SESSION['admin'])){
+							echo '<div class="admin-login">
+									<p>Hello, Admin!  </p>
+									<p><a href="logout.php">Log Out</a></p>
+								</div>';
+						}else{
+							echo '<div class="admin-login">
+									<p><a href="login.php">Sign In</a></p>
+								</div>';
+						}
+						
+						?>
+						
 					</div>
 				</header>
