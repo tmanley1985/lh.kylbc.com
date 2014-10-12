@@ -79,11 +79,17 @@ function get_tbl_name($new_rec){
 		$db= $this->con;
 		$stmt = $db->query($sql);
 
-		if ($stmt){
-			echo 'New record inserted';
-		}else{
-			echo 'Something went wrong';
-		}
+			if($_POST){
+				if ($stmt){
+
+					echo 'New record inserted';
+
+				}else{
+						echo 'Something went wrong';
+					}
+			}
+				
+
 	}
 
 }
