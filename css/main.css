@@ -4,16 +4,9 @@ HEADER, LOGO and NAV
 header{
 	width:100%;
 	padding:2%;
-	background-color: #475E5E;
-	 box-shadow: 10px 10px 5px black;
+	background-color: #6b0000;
 	font-family: 'Oswald', sans-serif;
 	color:white;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
 }
 header h1{
 	font-size: 1.5em;
@@ -36,42 +29,60 @@ nav li{
 BODY, WRAPPER, FOOTER
 ********/
 body{
+	background-color: #6b0000;
 }
 #wrapper {
 	width:90%;
 	height:100%;
 	margin-left:auto;
 	margin-right:auto;
-	
-}
-section{
-	width:100%;
-	margin-top: 10%;
-}
-.sidebar > h2{
-	width:90%;
-	height:10%;
-	background-color:#336699;
-	padding: 2%;
-	font-size:1.5em;
-	font-family: 'Oswald', sans-serif;
-	text-align:center;
-	color:white;
+	background-color: #E8EAEA;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
+
+section{
+	width:100%;
+	margin-top: 5%;
+}
+section > h3{
+	font-size:1.75em;
+	font-family: 'Oswald', sans-serif;
+	color:#000000;
+	margin-bottom:1%;
+}
+.sidebar > h2{
+	height:10%;
+	padding: 2%;
+	font-size:1.75em;
+	font-family: 'Oswald', sans-serif;
+	text-align:center;
+	color:#000000;
+	border: 1px solid black;
+}
+article{
+	border: 1px solid black;
+	background-color: #868686;
+	padding:5%;
+	color:#000000;
+	font-family: 'Oswald', sans-serif;
+	margin-bottom:2%;
+	font-size: 1.125em;
+	line-height: 150%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
 footer{
 	width:100%;
 	height:10%;
 	padding: 2%;
 	margin-top:5%;
 	margin-bottom:0;
-	background-color: #475E5E;
+	background-color: #6b0000;
 	overflow:auto;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
 	color:white;
 	font-family: 'Shadows Into Light', cursive;
 
@@ -115,10 +126,10 @@ tr:nth-of-type(odd) {
   background-color: #ccc; 
 }
 table, th{
-	border: 1px solid black;
+	border: 1px solid #b20000;
 }
 th{
-	background-color: #336699;
+	background-color: #000000;
 	padding:0.75%;
 	font-size: 1.25em;
 	font-family: 'Oswald', sans-serif;
@@ -130,6 +141,19 @@ td{
 	font-family: 'Oswald', sans-serif;
 	text-align: center;
 
+}
+
+/********
+FORMS
+********/
+form{
+	height:50%;
+	width:25%;
+	padding:2.5%;
+	background-color:#c0c0c0;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5%;
 }
 
 /********
@@ -163,7 +187,10 @@ Responsive Slider
   height: auto;
   float: left;
   width: 100%;
-  border: 0;
+  border: 1px solid #B20000;
+  -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
   }
 /********
 Global
