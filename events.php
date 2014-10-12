@@ -30,7 +30,10 @@
 			?>
 		</tr>
 	</table>
-<form method="post">
+<?php
+
+if(isset($_SESSION['admin'])){
+	echo '<form method="post">
 
 	Event:   <input type="text" id="event"   name="event"><br>
 	Promoter:   <input type="text" id="promoter"   name="promoter"><br>
@@ -41,13 +44,16 @@
 
 	<input type="submit" value="Submit">
 
-</form>
+</form>';
 
-<?php 
+
 	$new_model = new Model($db);
 	$sql = $new_model->insert_new_rec($_POST);
 	echo $sql;
+}
+
 ?>
+
 
 <?php
 	require('inc/footer.php');
