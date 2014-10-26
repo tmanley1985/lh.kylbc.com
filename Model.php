@@ -54,12 +54,17 @@ function get_tbl_values($new_rec){
 
 }
 
-//Gets the first column name and appends an 's' to correspond to its table
+//Gets the first(second now!) column name and appends an 's' to correspond to its table
 function get_tbl_name($new_rec){
 	$cols = $this->get_tbl_names($new_rec);
 	$cols_exploded = explode(',', $cols);
-	$tbl_name = $cols_exploded[0] . 's';
+		if(isset($cols_exploded)){
+
+			$tbl_name = $cols_exploded[0] . 's';
+			
+		}
 	return $tbl_name;
+	
 }
 
 	//Abstracted function for Admin to insert new record in database
@@ -82,16 +87,28 @@ function get_tbl_name($new_rec){
 			if($_POST){
 				if ($stmt){
 
-					echo 'New record inserted';
+					echo '<div class="alert"><p>New record inserted</p></div>';
 
 				}else{
 						echo 'Something went wrong';
 					}
-			}
-				
+			}		
+	}
+
+	public function delete($id, $table){
+		//Build the sql
+		$sql = 'DELETE FROM ' . $table . ' WHERE id='. $id;
+
+		$db= $this->con;
+		if(isset($sql)){
+			$stmt = $db->query($sql);
+		}else{echo "An Error Occurred";}
 
 	}
 
+	public function update(){
+
+	}
 }
 
 ?>
