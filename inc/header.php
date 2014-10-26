@@ -1,5 +1,19 @@
 <?php 
 	session_start();
+
+	$inactive = 600;
+	 
+	// check to see if $_SESSION["timeout"] is set
+	if (isset($_SESSION["timeout"])) {
+	    // calculate the session's "time to live"
+	    $sessionTTL = time() - $_SESSION["timeout"];
+	    if ($sessionTTL > $inactive) {
+	        header("Location: logout.php");
+	    }
+	}
+ 
+	$_SESSION["timeout"] = time();
+
 	//Check to see if the session is set and if so sets the admin session to true
 	if(isset($_SESSION['authorized'])){
 		$_SESSION['admin'] = true;
@@ -13,6 +27,7 @@
 	<html>
 		<head>
 			<meta charset="UTF-8">
+			<title>Kentucky Local Boxing Committee</title>
 			<link rel="stylesheet" type="text/css" href="css/normalize.css">
 			<link rel="stylesheet" type="text/css" href="css/grid.css">
 			<link rel="stylesheet" type="text/css" href="css/main.css">
