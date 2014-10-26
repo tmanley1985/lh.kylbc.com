@@ -7,7 +7,6 @@
 			<!-- Rotating pictures-->
 			<!--Call Jquery function here-->
 			<section class="grid-6 main">
-				<h3>Kentucky Amateur Boxing</h3>
 				
 				<ul class="rslides">
 				  <li><img src="graphics/lexpal.jpg" alt=""></li>
@@ -17,10 +16,11 @@
 
 			<section class="grid-4 sidebar">
 				<h2>Who Are We?</h2>
+				<br>
 					
 				<article>
 
-					<p>We are our Kentucky's Local Boxing Committee.  We are a  subset of USA
+					<p>We are Kentucky's Local Boxing Committee.  We are a  subset of USA
 					Boxing, the umbrella for all amateur boxing in the United States.  Our
 					main goal is to promote amateur boxing while striving to provide a safe,
 					competitive environment for youth.  This website lists all current registered
