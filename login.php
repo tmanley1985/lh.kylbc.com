@@ -13,9 +13,11 @@
 
 ?>
 <form method="post">
-	Username: <input type="text" id="username" name="username">
+	<h4>Enter Your Username and Password</h4>
 	<br>
-	Password: <input type="password" id="password" name="password">
+	<label>Username: </label><input type="text" id="username" name="username">
+	<br>
+	<label>Password: </label><input type="password" id="password" name="password">
 	<br>
 	<input type="submit" value="Login">
 </form>
