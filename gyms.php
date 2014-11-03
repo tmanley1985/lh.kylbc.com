@@ -90,10 +90,15 @@
 //Make the Update Button a SEND button
 
 function updateRec(element) {
+	//Grabs the id from the element to pass into an ajax request
+	var id = $(element).attr('id');
+	  //Change the Update Button to a Submit Button.  Removes onclick event.
+	  $(element).html('<td class="btn">Submit</td>').addClass('submit').removeAttr('onclick');
+	  //Change the Delete Button to a Cancel Button. Removes onclick event.
+	  $(element).prev("td").html('<td class="btn cancel"><a class="btn" href="gyms.php">Cancel</a></td>')
+	  .addClass('cancel').removeAttr('onclick');
 
-	  $(element).html('<td class="btn">Submit</td>');
-	  $(element).prev("td").html('<td class="btn">Cancel</td>');
-
+	  //Grabs the table cell and traverses to the next td
    $(element).nextAll('td:not(:first-child)').each(function () {
         var html = $(this).html();
         var input = $('<input type="text" />');
@@ -101,7 +106,9 @@ function updateRec(element) {
         $(this).html(input);
 	});
 }
- 
+
+ //When the cancel button is clicked the inputs vanish
+
 </script>
 
 <?php
