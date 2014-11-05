@@ -106,9 +106,15 @@ function get_tbl_name($new_rec){
 
 	}
 
-	public function update(){
-
+	public function update($fields){
+		//Build the sql using a foreach loop
+		$sql;
+		foreach ($fields as $name => $value) {
+			$sql = "UPDATE " . $name[0] . "s
+					SET " . $name . "=" . $value
+					. "WHERE id=" . $name['id'];
+		}
 	}
-}
 
+}
 ?>
