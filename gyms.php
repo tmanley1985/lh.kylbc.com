@@ -24,12 +24,13 @@
 						if(isset($_SESSION['admin']) == true){
 							echo '<td class="btn" id=' .  $id . ' onclick="delRecord(this)">Delete?</td>';
 							
-							echo '<td class="btn" id=' . $id . ' onclick="updateRec(this)">Update?</td>';}
-						echo '<td id=' . $id . '>' . $gym['gym'] . '</td>';
-						echo '<td id=' . $id . '>' . $gym['coach'] . '</td>';
-						echo '<td id=' . $id . '>' . $gym['address'] . '</td>';
-						echo '<td id=' . $id . '>' . $gym['number'] . '</td>';
-						echo '<td id=' . $id . '>' . $gym['website'] . '</td>';
+							echo '<td class="btn" id=' . $id . ' onclick="editRec(this)">Edit?</td>';
+						}
+						echo '<td id=' . $id . ' name="gym">' . $gym['gym'] . '</td>';
+						echo '<td id=' . $id . ' name="coach">' . $gym['coach'] . '</td>';
+						echo '<td id=' . $id . ' name="address">' . $gym['address'] . '</td>';
+						echo '<td id=' . $id . ' name="number">' . $gym['number'] . '</td>';
+						echo '<td id=' . $id . ' name="website">' . $gym['website'] . '</td>';
 						echo '</tr>';
 
 					}
@@ -57,7 +58,7 @@
 	}
 ?>
 
-<script type="text/javascript">
+<script>
 	function delRecord(element){
 		
 		  	var id = $(element).attr('id');
@@ -75,27 +76,30 @@
 	}
 </script>
 <?php
-	
+	//Check to see whether user is admin, the id and table values are set
 	if(isset($_SESSION['admin']) && isset($_POST['id']) && isset($_POST['table'])){
 		$id = $_POST['id'];
 		$table = $_POST['table'];
 		$newDelModel = new Model($db);
-	//The delete method takes two parameters
-	$sql_params = $newDelModel->delete($id, $table);
+		//The delete method takes two parameters, id and table
+		$sql_params = $newDelModel->delete($id, $table);
 }
 ?>
+
 <script>
 //Use the values that are already inside of the table rows to populate inputs
 //Then use Jquery to turn table cells into inputs with those values populating the inputs
-//Make the Update Button a SEND button
+//Make the Edit Button a Submit button
 
-function updateRec(element) {
+function editRec(element) {
 	//Grabs the id from the element to pass into an ajax request
 	var id = $(element).attr('id');
 	  //Change the Update Button to a Submit Button.  Removes onclick event.
-	  $(element).html('<td class="btn">Submit</td>').addClass('submit').removeAttr('onclick');
+	  $(element).html('Submit').addClass('submit').attr('onclick','submit(this)');
+	  	  //$(element).html('<td><input type="submit" value="Submit"</td>').removeAttr('onclick');
+
 	  //Change the Delete Button to a Cancel Button. Removes onclick event.
-	  $(element).prev("td").html('<td class="btn cancel"><a class="btn" href="gyms.php">Cancel</a></td>')
+	  $(element).prev("td").html('<a class="btn" href="gyms.php">Cancel</a>')
 	  .addClass('cancel').removeAttr('onclick');
 
 	  //Grabs the table cell and traverses to the next td
@@ -106,11 +110,58 @@ function updateRec(element) {
         $(this).html(input);
 	});
 }
-
- //When the cancel button is clicked the inputs vanish
-
 </script>
 
+<script>
+
+function submit(element){
+	console.log(element);
+	//Grab the id
+	var id = $(element).attr('id');
+
+	//Sets the id to the value of the id
+	var records = {'id':id};
+	
+	//Grabs the input information and loads them into an array
+	$(element).nextAll('td').children('input').each(function() {
+		
+		//Grabs the table data as a parent of the input and grabs the name
+		var fieldName = $(this).parent('td').attr('name');
+		
+		//Grabs the value of the input
+		var inputVal = $(this).val();
+
+		//Create a js object with table name as key
+		records[fieldName] = inputVal;
+		
+	});
+	console.log(records);
+	$.ajax({
+		        url: 'gyms.php',
+		        type: 'POST',
+		        data: records ,
+		        success: function (response) {
+		            alert("Record Updated!");
+		        },
+		        error: function () {
+		            alert("Please Try Again");
+		        }
+		    });
+}
+
+</script>
+<?php
+	if(isset($_SESSION['admin'])){
+
+		if((isset($_POST)) ) {
+		$newEditModel = new Model($db);
+		$editRecord = $newEditModel->update($_POST);
+		} else{
+			echo 'No Post Array to be sent';
+		}	
+
+	}
+?>
 <?php
 	require('inc/footer.php');
 ?>
