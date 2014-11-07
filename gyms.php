@@ -52,9 +52,12 @@
 			<input type="submit" value="Submit">
 
 			</form>';
-			$new_model = new Model($db);
-			$sql = $new_model->insert_new_rec($_POST);
-			echo $sql;
+			if(isset($_POST)){
+				$new_model = new Model($db);
+				$sql = $new_model->insert_new_rec($_POST);
+				echo $sql;
+			}
+			
 	}
 ?>
 
@@ -120,7 +123,7 @@ function submit(element){
 	var id = $(element).attr('id');
 
 	//Sets the id to the value of the id
-	var records = {'id':id};
+	var records = {};
 	
 	//Grabs the input information and loads them into an array
 	$(element).nextAll('td').children('input').each(function() {
@@ -136,10 +139,10 @@ function submit(element){
 		
 	});
 	console.log(records);
-	$.ajax({
+	$.ajax({ 	//Set the parameters as a string via post
 		        url: 'gyms.php',
 		        type: 'POST',
-		        data: records ,
+		        data: records,
 		        success: function (response) {
 		            alert("Record Updated!");
 		        },
@@ -147,20 +150,20 @@ function submit(element){
 		            alert("Please Try Again");
 		        }
 		    });
+
 }
 
 </script>
 <?php
 	if(isset($_SESSION['admin'])){
-
-		if((isset($_POST)) ) {
-		$newEditModel = new Model($db);
-		$editRecord = $newEditModel->update($_POST);
-		} else{
-			echo 'No Post Array to be sent';
-		}	
+		if(isset($_POST)){
+			echo var_dump($_POST);
+			$newEditModel = new Model($db);
+			$editRec = $newEditModel->update($_POST);
+		}
 
 	}
+	
 ?>
 <?php
 	require('inc/footer.php');
