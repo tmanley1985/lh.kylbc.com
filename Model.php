@@ -107,12 +107,38 @@ function get_tbl_name($new_rec){
 	}
 
 	public function update($fields){
+		if(isset($fields)){
+
+
+		//Grab the id
+			$id = $fields['id'];
+		//Unset ID from Fields
+			unset($fields['id']);
+		//Grab the table name from the first element in the array
+
+			$table = $this->get_tbl_name($fields);
+
 		//Build the sql using a foreach loop
-		$sql;
-		foreach ($fields as $name => $value) {
-			$sql = "UPDATE " . $name[0] . "s
-					SET " . $name . "=" . $value
-					. "WHERE id=" . $name['id'];
+			
+			$table_val_string = array();
+
+			foreach ($fields as $name => $value) {
+				$table_val_string[] =  $name . '=' . ' " ' . $value . ' " ';
+
+			}
+			// Insert commas in between the columns and values for sql
+
+			$table_val_strings = implode(',',$table_val_string );
+
+			$sql = 'UPDATE ' . $table . ' SET ' . $table_val_strings . ' WHERE id=' . $id;
+			// UPDATE table_name
+			//SET column1=value1,column2=value2,...
+			//WHERE some_column=some_value;
+			$db= $this->con;
+			if(isset($sql)){
+				$stmt = $db->query($sql);
+			}else{echo "No update information";}
+
 		}
 	}
 
