@@ -37,6 +37,7 @@
 
 			?>
 	</table>
+
 </div>
 <?php 
 	if(isset($_SESSION['admin'])){
@@ -49,10 +50,12 @@
 			Address: <input type="text" id="address" name="address"><br>
 			Number:  <input type="text" id="number"  name="number"><br>
 			Website: <input type="text" id="website" name="website"><br>
+			<input type="hidden" id="insertform" name="insertform" value="true">
 			<input type="submit" value="Submit">
 
 			</form>';
-			if(isset($_POST)){
+			if(isset($_POST['insertform'])){
+				unset($_POST['insertform']);
 				$new_model = new Model($db);
 				$sql = $new_model->insert_new_rec($_POST);
 				echo $sql;
@@ -123,7 +126,7 @@ function submit(element){
 	var id = $(element).attr('id');
 
 	//Sets the id to the value of the id
-	var records = {};
+	var records = {id: id};
 	
 	//Grabs the input information and loads them into an array
 	$(element).nextAll('td').children('input').each(function() {
@@ -139,7 +142,8 @@ function submit(element){
 		
 	});
 	console.log(records);
-	$.ajax({ 	//Set the parameters as a string via post
+	$.ajax({ 	
+				//Make an AJAX call and send the post array
 		        url: 'gyms.php',
 		        type: 'POST',
 		        data: records,
