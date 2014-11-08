@@ -69,11 +69,12 @@
 		
 		  	var id = $(element).attr('id');
 			$.ajax({
-		        url: 'gyms.php',
+		        url: 'methodcalls.php',
 		        type: 'POST',
 		        data: { id: id, table : "gyms"} ,
 		        success: function (response) {
-		            alert("Record Deleted!");
+		            window.location.replace('gyms.php')
+		            alert('Record Deleted!');
 		        },
 		        error: function () {
 		            alert("Please Try Again");
@@ -82,14 +83,7 @@
 	}
 </script>
 <?php
-	//Check to see whether user is admin, the id and table values are set
-	if(isset($_SESSION['admin']) && isset($_POST['id']) && isset($_POST['table'])){
-		$id = $_POST['id'];
-		$table = $_POST['table'];
-		$newDelModel = new Model($db);
-		//The delete method takes two parameters, id and table
-		$sql_params = $newDelModel->delete($id, $table);
-}
+	
 ?>
 
 <script>
@@ -144,10 +138,11 @@ function submit(element){
 	console.log(records);
 	$.ajax({ 	
 				//Make an AJAX call and send the post array
-		        url: 'gyms.php',
+		        url: 'methodcalls.php',
 		        type: 'POST',
 		        data: records,
 		        success: function (response) {
+		        	window.location.replace('gyms.php');
 		            alert("Record Updated!");
 		        },
 		        error: function () {
@@ -158,17 +153,7 @@ function submit(element){
 }
 
 </script>
-<?php
-	if(isset($_SESSION['admin'])){
-		if(isset($_POST)){
-			echo var_dump($_POST);
-			$newEditModel = new Model($db);
-			$editRec = $newEditModel->update($_POST);
-		}
 
-	}
-	
-?>
 <?php
 	require('inc/footer.php');
 ?>
